@@ -22,3 +22,6 @@
 * falls noch nicht vorhanden, installieren Sie sich eine Entwicklungsumgebung ([VSCode](https://code.visualstudio.com/download), [Notepad++](https://notepad-plus-plus.org/downloads/), etc.). Die Wahl liegt hierbei bei ihnen 
 
 ## 2.2 Ihr erstes Programm 
+* erstellen Sie einen neuen Ordner mit dem Namen "Typescript Schulung"
+* erstellen Sie in dem Ordner "Typescript Schulung" eine .ts Datei mit dem Namen "ErstesProgramm" 
+* 
