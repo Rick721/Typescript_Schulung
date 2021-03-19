@@ -82,8 +82,13 @@ console.log('My name is : ' + name);
 * das folgende Beispiel veranschaulicht den Unterschied: 
 * //TODO: Code Beispiel einfügen 
 
-### const Variablen Deklaration 
+### 3.2.3 const Variablen Deklaration 
 
+* const ist eine Abkürzung und steht für constant 
+* Eine Variable vom Typ constant muss bereits bei der deklaration/initialisierung einen Wert erhalten
+* Eine Variable vom Typ constant kann nach der deklaration/initialisierung nicht mehr verändert werden
+* der Gültigkeitsbereich einer Variable vom Typ const, ist auf den Block-Scope beschränkt
+* TODO: Code beispiel einfügen 
 
 
 
