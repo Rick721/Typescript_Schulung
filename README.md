@@ -91,7 +91,92 @@ console.log('My name is : ' + name);
 * TODO: Code beispiel einfügen 
 
 
+## 3.3 Datentyp `Any`
+* Typescript besitzt einen neuen Datentyp namens `any` 
+* Eine Variable vom Typ `any` kann jeden einen Wert von jedem Datentyp beinhalten 
 
+> **Syntax & Beispiel**: `Typescript`
+```typescript
+let data1:string = 'Data1'
+
+//error - string type can not accept number or other data
+// data1 = 50; 
+
+// any data type variable can store any type of value, there are no data checking 
+let data2:any = 'Data2';
+data2 = 50;
+data2 = true;
+data2 = ['Hi','Hey','Good','Hello'];
+
+console.log(data2);
+```
+
+## 3.4 Datentyp `Array`
+* Arrays in Typescript funktionieren wie Arrays in Javascript 
+* Es gibt zwei Möglichkeiten, Arrays zu deklarieren: 
+  1. let meinArray: string[];
+      - let arrayStädte: string [] = ['Hamburg','Berlin','München','Stuttgart'];
+  2. let meinArray: Array&lt;string&gt;
+      - let arraySprachen: Array&lt;string&gt; = ['C','C++','Java','Ruby','Phthon'];
+      - In dem obrigen Beispiel haben wir einen Array vom Typ String erstellt (Typescript stellt nun sicher, dass der Array auch tatsächlich nur Strings beinhaltet)
+
+> **Syntax & Beispiel**: `Typescript`
+```typescript
+
+export {};
+
+let arrayStädte: string [] = ['Hamburg','Berlin','München','Stuttgart'];
+console.log('arrayStädte:',arrayStädte);
+
+
+let arraySprachen: Array<string> = ['C','C++','Java','Ruby','Phthon'];
+console.log('arraySprachen',arraySprachen);
+```
+
+## 3.5 Tuples
+* Typescript bietet eine neue Art von Array namens Tuples 
+* Tuples ermöglichen das speichern von mehreren Datentypen in einem Array
+* Wir deklarieren einen Tuple wie folgt: let personDetail: [string, number] = ['Dinanath', 35];
+
+> **Syntax & Beispiel**: `Typescript`
+```typescript
+export {};
+
+let arrayFrameworkDetails:  [string,number] = ['JavaScript',7.0];
+console.log('arrayFrameworkDetails:',arrayFrameworkDetails);
+
+console.log('arrayFrameworkDetails Name:',arrFrameworksDetails[0]);
+console.log('arrayFrameworkDetails Version:',arrFrameworksDetails[1]);
+```
+
+## 3.6 Enums
+* Enums sind eine Sammlung von Konstanten
+* Sie dienen der Lesbarkeit und der logischen Struktur unseres Codes
+* Sie bieten uns die Möglichkeit, vordefinierte Konstanten für unsere Variablen festzulegen
+* Es gibt 3 Arten von Enums: 
+  1. Numerischer enum (beinhaltet Zahlenwerte)
+  2. String enum (beinhaltet String Werte)
+  3. Heterogenes enum (beinhaltet String- und Zahlenwerte) 
+ 
+> **Syntax & Beispiel**: `Typescript`
+```typescript
+export {};
+
+enum RGBFarben { Rot, Grün, Blau };
+console.log('RGBFarben:', RGBFarben);
+console.log('RGBFarben.Grün:', RGBFarben.Grün);
+
+let farbeBlau: RGBFarben = RGBFarben.Blau;
+console.log('farbeBlau:', farbeBlau);
+
+enum Städte1 { Hamburg = 10, München = 20, Berlin = 30, Köln = 40, Stuttgart = 50 }
+console.log('Städte:', Städte1);
+console.log('Bangalore:',Städte1.München);
+
+enum Städte2 { Hamburg = 'M', München = 'D', Berlin = 'K', Köln = 'C', Stuttgart = 'B' }
+console.log('Städte:', Städte2);
+console.log('Bangalore:',Städte2.München);
+```
 
 
 
