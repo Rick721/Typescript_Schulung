@@ -224,6 +224,97 @@ sum(10, 20);
 sum(100);
 ```
 
+## 3.8 Klassen
+* Anders wie Javascript, ist Typescript eine objektorientierte Programmiersprache
+* Im objektorientierten programmieren, nutzen wir Klassen als einen Bauplan für ein Objekt
+* Eine Klasse kann Attribute (Eigenschaften) und Methoden (Verhaltensweisen) besitzen
+* Eine Klasse kann Attribute und Methoden von einer anderen Klasse "erben" dafür nutzen wir das Schlüsselwort `extends`
+* Typescript implementierte Klassen, um die Vorteile objektorientierte Techniken (Interfaces, Vererbung, Abstraktion) zur verfügung zu stellen 
+
+> **Syntax & Beispiel**: `Typescript`
+```typescript
+export {};
+
+class Begrüßung {
+  personenName: string;
+
+  constructor(name: string) {
+    this.personenName = name;
+  }
+
+  begrüßePerson() {
+    console.log(`Willkommen, hab einen schönen Tag ${this.personenName}!`)
+  }
+
+}
+
+let person1 = new Begrüßung('Max');
+console.log('person1.personenName:',person1.personenName);
+person1.begrüßePerson();
+```
+
+> **Syntax & Beispiel**: `Typescript - Klassenvererbung`
+```typescript
+// Klasse Person erbt von Klasse Begrüßung
+class Person extends Begrüßung {
+
+  constructor (pName: string) {
+    super(pName);
+  }
+
+  schlafen() {
+    console.log('*Person schläft*');
+  }
+
+}
+
+let person1 = new Person('Tom');
+console.log('person1.name:',person1.name);
+person1.begrüßePerson();
+person1.schlafen();
+```
+
+## 3.9 Interfaces
+* Ein Interface ist eine Art Klasse, die nur aus Konstanten und abstrakten Methoden besteht
+* In einem Interface können wir Konstanten und Funktionen in Form von abstrakten Methoden definieren
+* Die Konstanten und Methoden sind hierbei die Properties des Interfaces
+* Um ein Interface zu deklarieren, benutzen wir das Schlüsselwort `interface`
+* Interfaces bieten die Möglichkeit, optionale Properties zu erstellen, dazu hängen wir an das Ende unseres Propertienamens ein `?`
+
+> **Syntax & Beispiel**: `Typescript`
+```typescript
+export {};
+
+interface Kontakt {
+  vorname: string;
+  nachname: string;
+  alter?: number
+}
+
+function zeigeKontaktdetails (kontakt: Kontakt) {
+  console.log(`Kontaktdetails: ${kontakt.vorname} ${kontakt.nachname} ${kontakt.alter}`); 
+}
+
+let kontakt1 = { 
+  vorname: 'Max',
+  nachname: 'Mustermann',
+}
+
+zeigeKontaktdetails(kontakt1);
+
+let kontakt2 = { 
+  vorname: 'Max',
+  nachname: 'M.',
+  alter: 40
+}
+
+zeigeKontaktdetails(kontakt2);
+```
+
+## 3.10 Zugriffsmodifizierer
+
+
+
 
 
 
