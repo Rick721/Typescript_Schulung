@@ -1,5 +1,6 @@
 # Typescript für Anfänger
 
+
 # 1. Was ist Typescript und was bietet es für Vorteile? 
 
 
@@ -20,6 +21,7 @@
 * Typescript bietet im Vergleich zu Javascript mehr Sicherheit beim Programmieren und vermeidet Fehler
 * Durch die Compilierung wird die Fehlersuche vereinfacht  
 * Mithilfe von objektorientierten Konzepten, könne Entwickler saubereren, schnellern und übersichtlicheren Code schreiben
+
 
 
 # 2. Aufsetzen der Entwicklungsumgebung 
@@ -47,6 +49,7 @@ console.log('Hello World');
 
 ```
 * Nachdem sie den Code in ihrer Datei eingefügt haben, geben Sie den Befehl `tsc --build; node .\ErstesProgramm.js ` in ihre Konsole ein, um das Ergebniss in der Konsole ausgeben zu lassen
+
 
 # 3.0 Typescript features und Konzepte
 
