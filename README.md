@@ -312,6 +312,71 @@ zeigeKontaktdetails(kontakt2);
 ```
 
 ## 3.10 Zugriffsmodifizierer
+* Zugriffsmodifizierer legen die Zugriffsmöglichkeiten/Verfügbarkeit von Klassen, Interfaces, Properties und Funktionen fest
+* In Typescript gibt es 3 Arten von Zugriffsmodifizierern:
+  1. **public** - 
+      - Auf Klassen, Methoden, etc. mit einem public Zugriffsmodifizierer kann von jeder Klasse zugegriffen werden
+      - Standardmäßig sind in Typescript alle Klassen, Methoden, etc. public 
+      - Auf sie kann von überall ohne Einschränkungen zugegriffen werden
+  2. **private** - 
+      - Sind Klassen, Methoden, etc. als private gekennzeichnet, kann auf sie nur in der Klasse, in welcher sie erstellt wurden, zugegriffen werden
+      - Versucht eine andere Klasse auf sie zuzugreifen, wirft der Compiler einen Fehler
+  3. **protected** - 
+      - Der protected Zugriffsmodifizierer, kann nur von Variablen und Methoden genutzt werden
+      - Auf Methoden oder Variablen, welche mit protected gekennzeichnet sind, kann nur die Klasse, in welcher sie erstellt wurden zugreifen, oder eine Klasse, welche dieser Klasse erbt
+
+> **Syntax & Example**: `Typescript`
+```typescript
+export {};
+
+class Begrüßung {
+  public name: string; //andere Klassen können zugreifen
+  private privateName: string; //nur die Klasse Begrüßung kann zugreifen
+  protected protectedName: string; //nur die Klasse Begrüßung kann zugreifen und Klassen, welche von Begrüßung erben
+
+  constructor(_name: string) {
+    this.name = _name;
+  }
+
+  begrüßePerson() {
+    console.log(`Willkommen, hab einen schönen Tag ${this.name}!`)
+  }
+
+}
+
+let begrüßung1 = new Greetings('Max');
+console.log('begrüßung1.name:',begrüßung1.name);
+begrüßung1.begrüßePerson();
+
+// bei dem unteren console.log() würde der Compiler einen Fehler werfen, da wir außerhalb der Klasse nicht auf private Propteries zugreifen können
+// console.log(begrüßung1.privateName);
+
+console.log(`// ------------------------------`);
+
+// Klasse Person erbt von Begrüßung
+class Person extends Begrüßung {
+
+  constructor (pName: string) {
+    super(pName);
+  }
+
+  machAufgaben() {
+    console.log('Person macht verschieden Aufgaben');
+    // bei dem unteren console.log(), würde der Compiler nun wieder einen Fehler werfen, da die Klasse Person keinen Zugriff auf privateName hat
+    // console.log(begrüßung1.privateName);
+
+    // dadurch, dass die Klasse Person von der Klasse Begrüßung erbt, kann sie auch auf protectedName zugreifen 
+    console.log('this.protectedName:',this.protectedName);
+  }
+
+}
+
+let person1 = new Person('Tom');
+console.log('person1.name:',person1.name);
+person1.begrüßePerson();
+person1.machAufgaben();
+```
+ 
 
 
 
