@@ -178,5 +178,52 @@ console.log('Städte:', Städte2);
 console.log('Bangalore:',Städte2.München);
 ```
 
+## 3.7 Funktionen
+* Funktionen sind einer der wichtigsten Grundlagen in fast jeder Programmiersprache 
+* Eine Funktion ist eine Sammlung von Anweisungen, welche eine bestimmte Aufgabe erfüllen
+* Funktionen machen den Code lesbarer, verwaltbarer und wiederverwendbarer
+* Mithilfe von Typescript können wir die Typen von unseren Übergabeparametern festlegen, sowie von unseren Rückgabewerten
+* Typescript ermöglicht es optionale Parameter zu erstellen, indem wir ein `?` nach unserem Parameternamen angeben
+
+> **Syntax & Beispiel**: `Typescript`
+```typescript
+export {};
+
+// die Parameter erhalten einen festgelegten Datentyp, in diesem Fall number
+function sum(num1: number, num2: number) {
+  console.log(num1 + num2);
+}
+
+sum(10, 20);
+
+//der untere Funktionsaufruf würde einen Fehler werfen, da wir nur Werte vom Typ number übergeben dürfen
+// sum('one','two');
+
+// nicht nur der Parameter nachricht, sondern auch der Rückgabewert der Funktion erhält einen festgelegten Datentyp
+function zeigeNachricht(nachricht: string): string {
+  return nachricht;
+}
+let nachricht1 = zeigeNachricht('Willkommen zu Typescript');
+console.log(nachricht1);
+```
+
+> **Syntax & Beispiel**: `Typescript`
+```typescript
+export { };
+
+// der Parameter num2 erhält ein Fragezeichen, damit ist er optional und muss nicht mehr zwingend beim Funktionsaufruf übergeben werden
+function sum(num1: number, num2?: number) {
+  if (num2) {
+    console.log(num1 + num2);
+  } else {
+    console.log(num1);
+  }
+}
+
+sum(10, 20);
+sum(100);
+```
+
+
 
 
