@@ -407,9 +407,9 @@ person1.machAufgaben();
 ```
 
 
-### 4. Referenzen 
+# 4. Referenzen 
  
-4.1. Websiten / Blogs
+## 4.1. Websiten / Blogs
 ---------------------
 - Offizielle website: http://www.typescriptlang.org/
 - Source code: https://github.com/Microsoft/TypeScript  
